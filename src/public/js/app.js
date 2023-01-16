@@ -100,6 +100,7 @@ function handleWelcomeSubmit(event){
     event.preventDefault();
     const input = welcomeForm.querySelector("input");
     socket.emit("join_room", input.value, startMedia);
+    roomName = input.value;
     input.value = "";
 }
 
@@ -111,6 +112,10 @@ welcomeForm.addEventListener("submit", handleWelcomeSubmit);
 socket.on("welcome", () => {
     console.log("someone joined");
 })
+
+
+
+
 
 
 
